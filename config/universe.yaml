@@ -1,0 +1,24 @@
+# 股票池筛选条件
+filters:
+  exclude_st: true
+  exclude_delisted: true
+  min_list_days: 250
+  min_daily_turnover: 50000000    # 5000万/日
+  max_market_cap: 500000000000    # 5000亿，排除超大盘（可选）
+
+# 行业白名单（空=全行业）
+industry_whitelist: []
+# industry_whitelist:
+#   - 电子
+#   - 计算机
+#   - 电力设备
+#   - 医药生物
+
+# 板块
+boards:
+  -主板
+  -创业板
+  -科创板
+
+# 更新频率
+update_frequency: daily
