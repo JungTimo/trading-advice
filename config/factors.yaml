@@ -1,0 +1,25 @@
+# 因子权重（总和=1）
+weights:
+  rsrs: 0.20          # 市场择时 → 决定仓位
+  smart_money: 0.25   # 资金结构
+  momentum: 0.25      # 改进动量
+  capital_flow: 0.15  # 北向/主力
+  volatility: 0.15    # 波动率过滤（负向）
+
+# 因子参数
+momentum:
+  lookback: 20        # 20日
+  skip_recent: 5      # 跳过最近5天防假信号
+
+smart_money:
+  window: 10          # 10日资金结构
+
+rsrs:
+  lookback: 18        # 18日回归
+
+# 打分阈值
+thresholds:
+  strong_buy: 80
+  buy: 65
+  watch: 50
+  reduce: 35
