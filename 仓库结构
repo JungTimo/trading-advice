@@ -1,0 +1,34 @@
+a-share-picker/
+├── README.md                          # 上面那份
+├── requirements.txt
+├── config/
+│   ├── universe.yaml                  # 股票池参数
+│   ├── factors.yaml                   # 因子权重
+│   └── backtest.yaml                  # 回测参数
+├── data/
+│   ├── update_universe.py             # 更新股票池
+│   ├── fetch_daily.py                 # 拉日线
+│   ├── fetch_fundamental.py           # 拉财务/资金
+│   └── cache/                         # 本地 parquet 缓存
+├── strategy/
+│   ├── factor_score.py               # 因子打分核心
+│   ├── rsrs.py                        # RSRS 择时
+│   ├── smart_money.py                # 聪明钱因子
+│   ├── momentum.py                    # 改进动量
+│   └── composite.py                   # 综合打分
+├── backtest/
+│   ├── rqalpha_config.yaml
+│   ├── run_rqalpha.py                # RQAlpha 入口
+│   ├── magic_alt_runner.py           # magic-alt 调用
+│   └── evaluator.py                  # 绩效评估
+├── llm/
+│   ├── report_prompt.md              # LLM 提示词模板
+│   ├── generate_report.py            # 生成日报
+│   └── push.py                       # 推送到企微/飞书
+├── docs/
+│   ├── architecture.md               # 架构说明
+│   ├── factor_formulas.md            # 因子公式
+│   └── a-share-rules.md             # A股规则备忘
+└── tests/
+    ├── test_factors.py
+    └── test_backtest_rules.py
