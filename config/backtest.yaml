@@ -1,0 +1,28 @@
+# 回测通用参数
+start_date: "2018-01-01"
+end_date: "2026-09-30"
+
+initial_cash: 1000000
+
+# A股规则
+rules:
+  t_plus_one: true
+  limit_up_down: true
+  lot_size: 100
+  min_commission: 5.0
+  commission_rate: 0.0003
+  stamp_tax_rate: 0.001      # 卖出
+  transfer_fee_rate: 0.00001
+
+# 样本外区间（不参与参数优化）
+out_of_sample:
+  - ["2023-01-01", "2026-09-30"]
+
+# 绩效指标
+metrics:
+  - annual_return
+  - max_drawdown
+  - sharpe
+  - win_rate
+  - turnover
+  - limit_hit_count          # 涨跌停无法成交次数
