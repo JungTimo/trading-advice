@@ -1,34 +1,41 @@
 a-share-picker/
-├── README.md                          # 上面那份
-├── requirements.txt
+├── README.md                    ✅ 已给（你第一份大文档）
+├── requirements.txt             ✅ 已给
+│
 ├── config/
-│   ├── universe.yaml                  # 股票池参数
-│   ├── factors.yaml                   # 因子权重
-│   └── backtest.yaml                  # 回测参数
+│   ├── universe.yaml            ✅ 已给    # 股票池参数
+│   ├── factors.yaml             ✅ 已给    # 因子权重
+│   └── backtest.yaml            ✅ 已给    # 回测参数
+│
 ├── data/
-│   ├── update_universe.py             # 更新股票池
-│   ├── fetch_daily.py                 # 拉日线
-│   ├── fetch_fundamental.py           # 拉财务/资金
-│   └── cache/                         # 本地 parquet 缓存
+│   ├── update_universe.py       ✅ 已给（含基础过滤）                       # 更新股票池
+│   ├── fetch_daily.py           🟡 未单独给，逻辑可放 update_universe.py    # 拉日线
+│   ├── fetch_fundamental.py     ⚪ 未给（财务/资金流，待补）                # 拉财务/资金
+│   └── cache/                   ⚪ 目录（自动生成）                        # 本地 parquet 缓存
+│
 ├── strategy/
-│   ├── factor_score.py               # 因子打分核心
-│   ├── rsrs.py                        # RSRS 择时
-│   ├── smart_money.py                # 聪明钱因子
-│   ├── momentum.py                    # 改进动量
-│   └── composite.py                   # 综合打分
+│   ├── factor_score.py          ✅ 已给（含 composite 逻辑）                # 因子打分核心
+│   ├── rsrs.py                  ⚪ 未单独给（QuantsPlaybook 里搬）          # RSRS 择时
+│   ├── smart_money.py           ⚪ 未单独给（逻辑在 factor_score 里）         # 聪明钱因子
+│   ├── momentum.py              ⚪ 未单独给（逻辑在 factor_score 里）         # 改进动量
+│   └── composite.py             ❌ 已合并进 factor_score.py                    # 综合打分
+│
 ├── backtest/
-│   ├── rqalpha_config.yaml
-│   ├── run_rqalpha.py                # RQAlpha 入口
-│   ├── magic_alt_runner.py           # magic-alt 调用
-│   └── evaluator.py                  # 绩效评估
+│   ├── rqalpha_config.yaml      ✅ 已给（实际是 backtest.yaml）
+│   ├── run_rqalpha.py           ✅ 已给                         # RQAlpha 入口
+│   ├── magic_alt_runner.py      ⚪ 未给（可后续补）              # magic-alt 调用
+│   └── evaluator.py             ⚪ 未给（绩效评估，待补）        # 绩效评估
+│
 ├── llm/
-│   ├── report_prompt.md              # LLM 提示词模板
-│   ├── generate_report.py            # 生成日报
-│   └── push.py                       # 推送到企微/飞书
+│   ├── report_prompt.md         ✅ 已给                        # LLM 提示词模板
+│   ├── generate_report.py       ✅ 已给                        # 生成日报
+│   └── push.py                  ⚪ 未给（企微/飞书推送，待补）    # 推送到企微/飞书
+│
 ├── docs/
-│   ├── architecture.md               # 架构说明
-│   ├── factor_formulas.md            # 因子公式
-│   └── a-share-rules.md             # A股规则备忘
+│   ├── architecture.md          ✅ 已给         # 架构说明
+│   ├── factor_formulas.md       ✅ 已给        # 因子公式
+│   └── a-share-rules.md        ✅ 已给        # A股规则备忘
+│
 └── tests/
-    ├── test_factors.py
-    └── test_backtest_rules.py
+    ├── test_factors.py          ✅ 已给
+    └── test_backtest_rules.py   ⚪ 未给（A股规则单元测试，待补）
